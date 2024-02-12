@@ -23,13 +23,15 @@ function handleOverlay(e) {
   }
 }
 function handleScroll() {
-  let triggerElement = document.querySelector("nav");
-  let triggerPosition =
-    triggerElement.offsetTop + triggerElement.offsetHeight / 2;
+  if (!closebtn.classList.contains("hidden")) {
+    let triggerElement = document.querySelector("nav");
+    let triggerPosition =
+      triggerElement.offsetTop + triggerElement.offsetHeight / 2;
 
-  if (window.scrollY > triggerPosition && !triggered) {
-    triggered = true;
-    handleClose();
+    if (window.scrollY > triggerPosition && !triggered) {
+      triggered = true;
+      handleClose();
+    }
   }
 }
 
